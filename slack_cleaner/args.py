@@ -16,7 +16,7 @@ class Args():
                        help='Create a log file in the current directory')
 
         # Rate limit
-        p.add_argument('--rate', type=int,
+        p.add_argument('--rate', type=float,
                        help='Delay between API calls (in seconds)')
 
         # Type
