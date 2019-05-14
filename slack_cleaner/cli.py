@@ -142,6 +142,9 @@ def delete_message_on_channel(channel_id, message):
         except:
             logger.error(Colors.YELLOW + 'Failed to delete ->' + Colors.ENDC)
             pp.pprint(message)
+            if args.rate_limit:
+                logger.error(Colors.YELLOW + 'Pause' + Colors.ENDC)
+                time.sleep(args.rate_limit)
             return
 
         logger.warning(Colors.RED + 'Deleted message -> ' + Colors.ENDC
