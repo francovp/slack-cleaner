@@ -205,6 +205,8 @@ def delete_file(file):
         except:
             logger.error(Colors.YELLOW + 'Failed to delete ->' + Colors.ENDC)
             pp.pprint(file)
+            if args.rate_limit:
+                time.sleep(args.rate_limit)
             return
 
         logger.warning(Colors.RED + 'Deleted file -> ' + Colors.ENDC
